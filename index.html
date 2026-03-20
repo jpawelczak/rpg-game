@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acme Security RPG</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #111;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+      }
+      #game-container {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+        border-radius: 4px;
+      }
+      /* UI styles for dialogue */
+      #ui-layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      .dialogue-box {
+        pointer-events: auto;
+        background: linear-gradient(to bottom, #005086 0%, #001233 100%);
+        border: 4px solid #fff;
+        border-radius: 8px;
+        width: 80%;
+        max-width: 800px;
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        color: white;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.2rem;
+        display: none;
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.5), 0 10px 20px rgba(0,0,0,0.5);
+      }
+      .dialogue-speaker {
+        font-weight: bold;
+        color: #ffcc00;
+        margin-bottom: 0.8rem;
+        text-transform: uppercase;
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+        padding-bottom: 0.2rem;
+      }
+      .dialogue-text {
+        min-height: 60px;
+        line-height: 1.4;
+      }
+      .dialogue-choices {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .choice-btn {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        padding: 0.8rem 1rem;
+        text-align: left;
+        cursor: pointer;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.1rem;
+        transition: all 0.2s;
+        border-radius: 4px;
+      }
+      .choice-btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+        border-color: #fff;
+        transform: translateX(5px);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game-container"></div>
+    <div id="ui-layer">
+      <div id="dialogue-box" class="dialogue-box">
+        <div id="dialogue-speaker" class="dialogue-speaker">Name</div>
+        <div id="dialogue-text" class="dialogue-text">Dialogue text goes here...</div>
+        <div id="dialogue-choices" class="dialogue-choices"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
